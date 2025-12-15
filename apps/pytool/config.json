@@ -1,0 +1,5 @@
+{
+  "service": "example-service",
+  "timeout_seconds": 5,
+  "enabled": true
+}
