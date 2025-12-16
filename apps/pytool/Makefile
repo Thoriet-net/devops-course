@@ -19,7 +19,7 @@ install: venv
 	$(PIP) install --upgrade pip
 	$(PIP) install -r requirements.txt
 
-run:
+run: install
 	$(PY) src/main.py
 
 clean:
