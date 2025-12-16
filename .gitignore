@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.venv*/
+.ruff_cache/
+*.egg-info/
+
+# OS
+.DS_Store
