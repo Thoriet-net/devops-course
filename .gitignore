@@ -18,4 +18,5 @@ crash.log
 # Terraform outputs
 terraform/hello.txt
 terraform/summary.txt
-
+tfplan
+terraform/tfplan
