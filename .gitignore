@@ -14,4 +14,8 @@ __pycache__/
 *.tfstate
 *.tfstate.*
 crash.log
-EOF
+
+# Terraform outputs
+terraform/hello.txt
+terraform/summary.txt
+
