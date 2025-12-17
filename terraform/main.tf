@@ -2,11 +2,11 @@ terraform {
   required_version = ">= 1.5.0"
 
   required_providers {
-    local = {
-      source  = "hashicorp/local"
-      version = "~> 2.6"
-    }
+  random = {
+    source  = "hashicorp/random"
+    version = "~> 3.6"
   }
+}
 
   cloud {
     organization = "THORIET-CLOUD"
@@ -17,15 +17,10 @@ terraform {
   }
 }
 
-resource "local_file" "example" {
-  filename = var.filename
-  content  = var.message
+resource "random_pet" "name" {
+  length = 2
 }
 
-resource "local_file" "summary" {
-  filename = "summary.txt"
-  content  = <<EOF
-Created file: ${local_file.example.filename}
-ID: ${local_file.example.id}
-EOF
+resource "random_id" "suffix" {
+  byte_length = 4
 }

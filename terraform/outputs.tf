@@ -1,7 +1,7 @@
-output "file_path" {
-  value = local_file.example.filename
+output "pet_name" {
+  value = random_pet.name.id
 }
 
-output "file_id" {
-  value = local_file.example.id
+output "suffix_hex" {
+  value = random_id.suffix.hex
 }
