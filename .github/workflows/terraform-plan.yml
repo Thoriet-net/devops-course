@@ -1,0 +1,35 @@
+name: terraform-plan
+
+on:
+  pull_request:
+    paths:
+      - "terraform/**"
+      - ".github/workflows/terraform-plan.yml"
+  push:
+    branches: ["main"]
+    paths:
+      - "terraform/**"
+      - ".github/workflows/terraform-plan.yml"
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: terraform
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        run: terraform plan -no-color
